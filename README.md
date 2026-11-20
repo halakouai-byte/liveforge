@@ -65,7 +65,7 @@ node scripts/build.mjs
 
 ## Deploy — Cloudflare Pages
 
-The site deploys natively: the Cloudflare Pages project `liveforge` is connected to this repo on GitHub — every push to `main` triggers a Cloudflare build (`node scripts/build.mjs`), output `dist/`) and deploys automatically. No secret is stored on GitHub. Environment variables: **none** (there is no secret to set — if anyone proposes adding one, stop).
+The site deploys natively: the Cloudflare Pages project `liveforge` is connected to this repo on GitHub — every push to `main` triggers a Cloudflare build (`node scripts/build.mjs`, output `dist/`) and deploys automatically. No secret is stored on GitHub. Environment variables: **none** (there is no secret to set — if anyone proposes adding one, stop).
 
 - Node version: **20 LTS** (pinned in the workflows; the build uses Node 20 `fetch` + `AbortSignal.timeout`).
 - The build runs on Cloudflare Pages on push; `.github/workflows/build.yml` still runs its scan + build checks on push/PR, and commits the cache on `main` when it changed.

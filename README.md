@@ -65,23 +65,24 @@ node scripts/build.mjs
 
 ## Deploy — Cloudflare Pages
 
-Dashboard (one-time): Workers & Pages → Create → Pages → Connect to Git →
-select `halakouai-byte/liveforge` → production branch `main` → framework
-preset **None** → build command `node scripts/build.mjs` → build output
-directory `dist` → root `/` → environment variables: **none** (there is
-no secret to set — if anyone proposes adding one, stop).
+There is no native Pages ↔ GitHub link: the account's Pages Git
+installation is broken (API error 8000011 on project creation with a
+GitHub source), so Cloudflare cannot auto-deploy on push. Instead an
+auto-deploy watcher polls `main` every 10 minutes and deploys `dist/`
+with wrangler whenever HEAD moves — every push reaches the live site
+within ~10 minutes, with no secret stored on GitHub. Environment
+variables: **none** (there is no secret to set — if anyone proposes
+adding one, stop).
 
 - Node version: **20 LTS** (pinned in the workflows; the build uses
   Node 20 `fetch` + `AbortSignal.timeout`).
-- The fetch happens twice per push (once in GitHub Actions, once in
-  Cloudflare) — 5 API requests each, still trivial against the 60/hour
-  unauthenticated limit. The duplicated fetch is cheaper than a second
-  deploy mechanism.
+- The build runs in GitHub Actions on push (`.github/workflows/build.yml`);
+  the watcher deploys the built `dist/`. No Cloudflare-side build runs.
 - Refresh: `.github/workflows/refresh.yml` runs at 07:30 and 17:30 UTC
   (15 minutes after each scheduled vocabulary post) and commits the cache
-  only if it changed; that commit triggers a Cloudflare rebuild.
-- Rollback: revert one commit on `main`; Cloudflare redeploys the previous
-  `dist/` automatically.
+  only if it changed; the watcher picks that commit up and deploys it.
+- Rollback: revert one commit on `main`; the watcher deploys the previous
+  `dist/` within ~10 minutes.
 - Custom domain: none chosen yet. When one is bought, add it in Cloudflare
   Pages → Custom domains and update the single `site.url` value in
   `src/content.json`, then rebuild. Never hard-code the domain in HTML,
@@ -107,7 +108,7 @@ If the team switches, this README's deploy section must be updated first.
 
 Verified live during this build (all public, unauthenticated):
 
-- Public repositories: **5** (plan baseline was 4 — see note below)
+- Public repositories: **6** (plan baseline was 4 — see note below)
 - `english-vocab-daily` (Python, MIT): last push 20 Nov 2026, 13:11 UTC;
   latest commit `42bd84a` 20 Nov 2026, 12:56 UTC, "chore: update state
   2026-11-20"; last posted lesson #324 — "fill" — 20 Nov 2026
@@ -125,8 +126,8 @@ Verified live during this build (all public, unauthenticated):
   the architecture was designed for.
 
 Note — new repo since the plan baseline: `telegram-channel-prompt-pack`
-(HTML, created 20 Nov 2026, 14:39 UTC) appeared in the live repo list
-during this build. It is counted (5 repos) and appears in the activity
+(JavaScript, created 20 Nov 2026, 14:39 UTC) appeared in the live repo list
+during this build. It is counted (6 repos) and appears in the activity
 ticker, but it is NOT a featured card — the three featured cards stay
 curated in `src/featured.json`. Because its name contains the word
 "telegram", the strict no-"telegram" grep flags its name/URL in

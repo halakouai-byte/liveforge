@@ -65,24 +65,12 @@ node scripts/build.mjs
 
 ## Deploy — Cloudflare Pages
 
-There is no native Pages ↔ GitHub link: the account's Pages Git
-installation is broken (API error 8000011 on project creation with a
-GitHub source), so Cloudflare cannot auto-deploy on push. Instead an
-auto-deploy watcher polls `main` every 10 minutes and deploys `dist/`
-with wrangler whenever HEAD moves — every push reaches the live site
-within ~10 minutes, with no secret stored on GitHub. Environment
-variables: **none** (there is no secret to set — if anyone proposes
-adding one, stop).
+The site deploys natively: the Cloudflare Pages project `liveforge` is connected to this repo on GitHub — every push to `main` triggers a Cloudflare build (`node scripts/build.mjs`), output `dist/`) and deploys automatically. No secret is stored on GitHub. Environment variables: **none** (there is no secret to set — if anyone proposes adding one, stop).
 
-- Node version: **20 LTS** (pinned in the workflows; the build uses
-  Node 20 `fetch` + `AbortSignal.timeout`).
-- The build runs in GitHub Actions on push (`.github/workflows/build.yml`);
-  the watcher deploys the built `dist/`. No Cloudflare-side build runs.
-- Refresh: `.github/workflows/refresh.yml` runs at 07:30 and 17:30 UTC
-  (15 minutes after each scheduled vocabulary post) and commits the cache
-  only if it changed; the watcher picks that commit up and deploys it.
-- Rollback: revert one commit on `main`; the watcher deploys the previous
-  `dist/` within ~10 minutes.
+- Node version: **20 LTS** (pinned in the workflows; the build uses Node 20 `fetch` + `AbortSignal.timeout`).
+- The build runs on Cloudflare Pages on push; `.github/workflows/build.yml` still runs its scan + build checks on push/PR, and commits the cache on `main` when it changed.
+- Refresh: `.github/workflows/refresh.yml` runs at 07:30 and 17:30 UTC (15 minutes after each scheduled vocabulary post) and commits the cache only if it changed; that commit triggers a Cloudflare rebuild.
+- Rollback: revert one commit on `main`; Cloudflare rebuilds and redeploys automatically.
 - Custom domain: none chosen yet. When one is bought, add it in Cloudflare
   Pages → Custom domains and update the single `site.url` value in
   `src/content.json`, then rebuild. Never hard-code the domain in HTML,

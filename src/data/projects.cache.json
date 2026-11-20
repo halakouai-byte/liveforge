@@ -1,0 +1,154 @@
+{
+  "fetchedAt": "2026-11-20T19:42:29.785Z",
+  "dataStale": false,
+  "sources": {
+    "repos": {
+      "status": "ok",
+      "fetchedAt": "2026-11-20T19:42:29.785Z",
+      "http": 200
+    },
+    "user": {
+      "status": "ok",
+      "fetchedAt": "2026-11-20T19:42:29.785Z",
+      "http": 200
+    },
+    "vocab": {
+      "status": "ok",
+      "fetchedAt": "2026-11-20T19:42:29.785Z",
+      "http": 200
+    },
+    "state": {
+      "status": "ok",
+      "fetchedAt": "2026-11-20T19:42:29.785Z",
+      "http": 200
+    },
+    "lessons": {
+      "status": "ok",
+      "fetchedAt": "2026-11-20T19:42:29.785Z",
+      "http": 200
+    }
+  },
+  "user": {
+    "login": "halakouai-byte",
+    "id": 322827745,
+    "avatar_url": "https://avatars.githubusercontent.com/u/322827745?v=4",
+    "public_repos": 5,
+    "followers": 0,
+    "bio": "Freelance Developer",
+    "created_at": "2026-08-30T14:45:53Z"
+  },
+  "repos": [
+    {
+      "name": "telegram-channel-prompt-pack",
+      "description": "ChannelCraft Prompt Pack — 120 AI prompts to run a Telegram channel ($2 USDT on TON)",
+      "html_url": "https://github.com/halakouai-byte/telegram-channel-prompt-pack",
+      "language": "JavaScript",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-11-20T19:34:31Z",
+      "updated_at": "2026-11-20T19:31:19Z",
+      "created_at": "2026-11-20T14:39:29Z",
+      "license": null,
+      "topics": []
+    },
+    {
+      "name": "halakouai-byte",
+      "description": "Freelance Developer",
+      "html_url": "https://github.com/halakouai-byte/halakouai-byte",
+      "language": null,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-11-20T13:14:37Z",
+      "updated_at": "2026-11-20T13:13:53Z",
+      "created_at": "2026-11-20T13:13:51Z",
+      "license": null,
+      "topics": []
+    },
+    {
+      "name": "english-vocab-daily",
+      "description": null,
+      "html_url": "https://github.com/halakouai-byte/english-vocab-daily",
+      "language": "Python",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-11-20T13:11:42Z",
+      "updated_at": "2026-11-20T12:53:27Z",
+      "created_at": "2026-11-18T20:07:02Z",
+      "license": "MIT",
+      "topics": []
+    },
+    {
+      "name": "t3n-expenseops-agent",
+      "description": "T3N ExpenseOps agent — Superteam Earn Agent Build Challenge",
+      "html_url": "https://github.com/halakouai-byte/t3n-expenseops-agent",
+      "language": "TypeScript",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-09-06T09:40:08Z",
+      "updated_at": "2026-09-06T09:40:13Z",
+      "created_at": "2026-09-06T09:40:04Z",
+      "license": null,
+      "topics": []
+    },
+    {
+      "name": "crumbboard-cookie",
+      "description": "CrumbBoard — Cookie Chain cApp for Superteam Earn",
+      "html_url": "https://github.com/halakouai-byte/crumbboard-cookie",
+      "language": "TypeScript",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-09-06T08:58:40Z",
+      "updated_at": "2026-09-06T08:58:54Z",
+      "created_at": "2026-09-06T08:58:36Z",
+      "license": null,
+      "topics": []
+    }
+  ],
+  "vocab": {
+    "pushed_at": "2026-11-20T13:11:42Z",
+    "last_commit": {
+      "sha": "42bd84aacde99ecbf7a79ed43ef9e25d19e961c9",
+      "shortSha": "42bd84a",
+      "date": "2026-11-20T12:56:09Z",
+      "message": "chore: update state 2026-11-20",
+      "url": "https://github.com/halakouai-byte/english-vocab-daily/commit/42bd84aacde99ecbf7a79ed43ef9e25d19e961c9"
+    },
+    "commit_dates": [
+      "2026-11-20T12:56:09Z"
+    ],
+    "state_commit_dates": [
+      "2026-11-20T12:56:09Z"
+    ],
+    "state": {
+      "last_index": 324,
+      "last_date": "2026-11-20",
+      "last_hash": "8a7c997ff25a46d8652bf9e2ba5dcb8dd55cd1cbcb1cbd908162b340e1d5c848"
+    },
+    "lessonCount": 1446,
+    "lastWord": {
+      "word": "fill",
+      "meaning": "to make something full",
+      "phonetic": "/fɪl/",
+      "example": "Please fill this bottle with clean water.",
+      "type": "verb",
+      "quiz_q": "What does \"fill\" mean?",
+      "quiz_options": [
+        "to make something full",
+        "to take in liquid, information",
+        "to manage a difficult situation",
+        "to divide into parts"
+      ]
+    }
+  },
+  "stats": {
+    "total_repos": 5,
+    "total_stars": 0,
+    "total_forks": 0,
+    "languages": [
+      "JavaScript",
+      "Python",
+      "TypeScript"
+    ],
+    "lastPush": "2026-11-20T19:34:31Z"
+  }
+}

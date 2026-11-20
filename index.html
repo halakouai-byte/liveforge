@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{site.title}}</title>
+<meta name="description" content="{{site.description}}">
+<meta name="theme-color" content="#0d1117">
+<link rel="canonical" href="{{site.url}}">
+<meta property="og:title" content="{{site.title}}">
+<meta property="og:description" content="{{site.description}}">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="{{site.url}}">
+<meta property="og:image" content="{{site.url}}assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{site.title}} — I build small systems that run themselves.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{site.title}}">
+<meta name="twitter:description" content="{{site.description}}">
+<meta name="twitter:image" content="{{site.url}}assets/img/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="preload" href="/assets/fonts/mona-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/main.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"{{site.name}}","jobTitle":"{{site.bio}}","url":"{{site.url}}","sameAs":["{{site.github}}"]}}
+</script>
+<script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-nav">
+  <div class="wrap">
+    <a class="nav-brand" href="{{site.url}}">
+      <img src="/assets/img/avatar.png" alt="{{site.name}}" width="32" height="32">
+      <span>{{site.name}}</span>
+    </a>
+    <nav aria-label="Sections">
+      <ul class="nav-links">
+        <li><a href="#work">{{nav.work}}</a></li>
+        <li><a href="#automation">{{nav.automation}}</a></li>
+        <li><a href="#how">{{nav.how}}</a></li>
+        <li><a href="#contact">{{nav.contact}}</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary" href="{{site.github}}">{{nav.githubButton}}</a>
+  </div>
+</header>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-heading">
+    <canvas class="hero-canvas" id="constellation" aria-hidden="true" data-points='{{CONSTELLATION_POINTS}}'></canvas>
+    <div class="wrap">
+      <p class="eyebrow">{{hero.eyebrow}}</p>
+      <h1 id="hero-heading">{{hero.headline}}</h1>
+      <p class="subhead">{{hero.subhead}}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#work">{{hero.primaryCta}}</a>
+        <a class="btn btn-secondary" href="{{site.github}}">{{hero.secondaryCta}}</a>
+      </div>
+      <p class="supporting">{{hero.supporting}}</p>
+      <a class="scroll-cue" href="#stats">{{hero.scrollCue}}<span aria-hidden="true">&#8964;</span></a>
+    </div>
+  </section>
+
+  <section class="stats-strip" id="stats" aria-labelledby="stats-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="stats-heading">{{stats.heading}}</h2>
+      </div>
+      <p class="freshness">{{FRESHNESS_LINE}}</p>
+      <div class="stats-grid">
+{{STATS}}
+      </div>
+    </div>
+  </section>
+
+  <section id="work" aria-labelledby="work-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="work-heading">{{work.heading}}</h2>
+        <p class="section-sub">{{work.subhead}}</p>
+      </div>
+      <div class="project-grid">
+{{REPO_CARDS}}
+      </div>
+      <p class="all-repos"><a href="{{site.githubRepos}}">{{work.allReposLink}} &rarr;</a></p>
+    </div>
+  </section>
+
+  <section class="automation" id="automation" aria-labelledby="automation-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="automation-heading">{{automation.heading}}</h2>
+        <p class="section-sub">{{automation.subhead}}</p>
+      </div>
+      <div class="automation-grid">
+        <div class="automation-panel reveal">
+          <h3>{{automation.proofLabels.lastPost}}</h3>
+{{MSG_CARD}}
+{{QUIZ_CARD}}
+          <dl class="proof-list">
+{{PROOF_LIST}}
+          </dl>
+          <p>{{automation.deterministic}} <a href="{{FEATURED_POST_SCRIPT_URL}}">See the posting script</a>.</p>
+        </div>
+        <div class="automation-panel reveal">
+          <h3>{{automation.proofLabels.schedule}}</h3>
+          <ul class="timeline">
+            <li><time datetime="07:15">07:15 UTC</time><span>Morning word</span></li>
+            <li><time datetime="17:15">17:15 UTC</time><span>Evening quiz</span></li>
+            <li><time>Daily</time><span>State committed back to the repo</span></li>
+          </ul>
+          <div class="code-panel" aria-label="Posting schedule from the project README"><code><span class="comment"># from the project README — cron schedule</span>
+15 7,17 * * *   # 07:15 and 17:15 UTC, daily
+index = day_of_year % len(lessons)</code></div>
+          <p>{{automation.scheduleNote}}</p>
+          <h3>Last 7 days</h3>
+          <ul class="day-strip">
+{{DAY_STRIP}}
+          </ul>
+        </div>
+      </div>
+      <p class="section-sub automation-body">{{automation.body}}</p>
+      <div class="ticker-band reveal">
+        <div class="ticker-head">
+          <h3>{{automation.tickerLabel}}</h3>
+          <button class="ticker-toggle" type="button" id="ticker-toggle" aria-pressed="false" data-resume-label="{{automation.tickerResume}}">{{automation.tickerPause}}</button>
+        </div>
+        <ul class="ticker" id="ticker" aria-live="polite">
+{{TICKER_ITEMS}}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" aria-labelledby="how-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="how-heading">{{how.heading}}</h2>
+        <p class="section-sub">{{how.subhead}}</p>
+      </div>
+      <ol class="steps">
+{{STEPS}}
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div class="wrap">
+      <p class="eyebrow">{{contact.heading}}</p>
+      <h2 id="contact-heading">{{contact.question}}</h2>
+      <p>{{contact.body}}</p>
+      <a class="btn btn-primary" href="{{site.github}}">{{contact.cta}}</a>
+      <p class="note">{{contact.note}}</p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>{{footer.line}}</p>
+    <p><a href="{{site.github}}">github.com/{{site.name}}</a></p>
+    <p class="updated">{{FOOTER_UPDATED}}</p>
+    <p>{{site.footerAttribution}}</p>
+  </div>
+</footer>
+</body>
+</html>

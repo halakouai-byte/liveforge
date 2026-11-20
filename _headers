@@ -1,0 +1,21 @@
+# LiveForge — Cloudflare Pages headers (PLAN section 9.2, strict version).
+# Committed in the repo root so every deploy reproduces the same headers.
+# Notes: /assets/* is NOT content-hashed, so it uses max-age=3600,
+# must-revalidate (not immutable). /data/projects.json and /status.json are
+# no-cache so a health check never reads a stale CDN copy. HSTS is set in
+# the Cloudflare dashboard only, never here.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), autoplay=(), encrypted-media=(), fullscreen=(self), picture-in-picture=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://avatars.githubusercontent.com; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  Cache-Control: public, max-age=3600, must-revalidate
+/assets/*
+  Cache-Control: public, max-age=3600, must-revalidate
+/data/projects.json
+  Cache-Control: no-cache
+/status.json
+  Cache-Control: no-cache

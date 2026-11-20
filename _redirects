@@ -1,0 +1,6 @@
+# LiveForge — redirects.
+# There is exactly one canonical host (liveforge.pages.dev until a custom
+# domain is chosen), so no redirect is needed. This file exists to record
+# that decision: if a non-canonical mirror ever exists, add one line here:
+#   https://<non-canonical>/* https://<canonical>/:splat 301
+# No redirect may point to an external site the owner has not confirmed.

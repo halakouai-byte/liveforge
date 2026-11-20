@@ -1,0 +1,37 @@
+# LiveForge — twice-daily live-data refresh.
+# Runs 15 minutes after each scheduled vocabulary post (07:15 / 17:15 UTC),
+# so "latest lesson" and "last push" are never more than ~12 hours stale.
+# The cache is committed only if the fetched data changed; that commit
+# triggers a Cloudflare Pages rebuild. A failed fetch never overwrites a
+# good cache, and the build never fails because data failed.
+# No token of any kind is used by this workflow.
+name: Refresh live data
+
+on:
+  schedule:
+    - cron: "30 7 * * *"
+    - cron: "30 17 * * *"
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Node 20 LTS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch + build
+        run: node scripts/build.mjs
+
+      - name: Commit cache only if changed
+        run: |
+          git config user.name "liveforge-build"
+          git config user.email "liveforge-build@users.noreply.github.com"
+          git add src/data/projects.cache.json assets/img/avatar.png
+          git diff --cached --quiet || git commit -m "chore: refresh live data cache [skip ci]"
+          git push || echo "Nothing to push or push skipped"

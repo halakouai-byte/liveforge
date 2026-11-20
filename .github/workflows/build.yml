@@ -1,0 +1,52 @@
+# LiveForge — build on push / PR.
+# On a PR it builds only. On main it also commits the updated cache back
+# (only if the fetched data changed). Deploy is done by Cloudflare Pages
+# from the same push — there is no deploy step here.
+# No token of any kind is used by this workflow: the build fetch is
+# unauthenticated, and the git push uses the checkout's default credentials.
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          # Full history: gitleaks scans every commit, not just the tip.
+          fetch-depth: 0
+
+      - name: Set up Node 20 LTS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # PLAN section 9.1 / qa-security-plan 1.1.11: the secret scan runs
+      # gitleaks and fails on any finding. No token of any kind is used
+      # here — the pinned release binary is downloaded and run directly,
+      # so no pattern literal (and no credential name) lives in this file.
+      - name: Secret scan (gitleaks)
+        run: |
+          curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.28.0/gitleaks_8.28.0_linux_x64.tar.gz -o /tmp/gitleaks.tar.gz
+          tar -xzf /tmp/gitleaks.tar.gz -C /tmp gitleaks
+          /tmp/gitleaks git --verbose --exit-code 1
+
+      - name: Build site
+        run: node scripts/build.mjs
+
+      - name: Check dist output exists
+        run: test -f dist/index.html && test -f dist/data/projects.json && test -f dist/status.json && test -f dist/_headers
+
+      - name: Commit updated cache (main only, only if changed)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          git config user.name "liveforge-build"
+          git config user.email "liveforge-build@users.noreply.github.com"
+          git add src/data/projects.cache.json assets/img/avatar.png
+          git diff --cached --quiet || git commit -m "chore: refresh live data cache [skip ci]"
+          git push || echo "Nothing to push or push skipped"

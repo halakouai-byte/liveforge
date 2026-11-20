@@ -6,6 +6,11 @@
 # unauthenticated, and the git push uses the checkout's default credentials.
 name: Build
 
+# Least privilege: this workflow only reads the repo and, on main, pushes the
+# refreshed cache back. The default token must not stay permissive.
+permissions:
+  contents: write
+
 on:
   push:
     branches: [main]
@@ -30,9 +35,12 @@ jobs:
       # gitleaks and fails on any finding. No token of any kind is used
       # here — the pinned release binary is downloaded and run directly,
       # so no pattern literal (and no credential name) lives in this file.
+      # The tarball SHA256 is verified against the official release
+      # checksums file before extraction, so a tampered download fails here.
       - name: Secret scan (gitleaks)
         run: |
           curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.28.0/gitleaks_8.28.0_linux_x64.tar.gz -o /tmp/gitleaks.tar.gz
+          echo "a65b5253807a68ac0cafa4414031fd740aeb55f54fb7e55f386acb52e6a840eb  /tmp/gitleaks.tar.gz" | sha256sum -c -
           tar -xzf /tmp/gitleaks.tar.gz -C /tmp gitleaks
           /tmp/gitleaks git --verbose --exit-code 1
 

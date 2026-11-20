@@ -7,6 +7,11 @@
 # No token of any kind is used by this workflow.
 name: Refresh live data
 
+# Least privilege: this workflow only reads the repo and pushes the
+# refreshed cache back. The default token must not stay permissive.
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: "30 7 * * *"

@@ -194,9 +194,15 @@ h3 { font-size: var(--text-h3); line-height: 1.3; letter-spacing: -0.4px; font-w
 .nav-links {
   display: flex;
   gap: 24px;
-  margin-left: auto;
   list-style: none;
   padding: 0;
+}
+/* Nav grouping (polish, 2026-11-21): the auto margin belongs on the <nav>
+   flex item of .wrap, not on the <ul> inside it — the <ul>'s auto margin
+   only pushed it to the right edge of the <nav>, which is content-wide,
+   so the links + button group sat left-packed at >=768px. */
+.site-nav nav {
+  margin-left: auto;
 }
 .nav-links a { color: var(--text-muted); font-size: var(--text-small); }
 .nav-links a:hover { color: var(--text); text-decoration: none; }

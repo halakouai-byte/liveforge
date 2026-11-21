@@ -1,30 +1,30 @@
 {
-  "fetchedAt": "2026-11-20T22:18:47.983Z",
+  "fetchedAt": "2026-11-21T07:21:22.226Z",
   "dataStale": false,
   "sources": {
     "repos": {
       "status": "ok",
-      "fetchedAt": "2026-11-20T22:18:47.983Z",
+      "fetchedAt": "2026-11-21T07:21:22.226Z",
       "http": 200
     },
     "user": {
       "status": "ok",
-      "fetchedAt": "2026-11-20T22:18:47.983Z",
+      "fetchedAt": "2026-11-21T07:21:22.226Z",
       "http": 200
     },
     "vocab": {
       "status": "ok",
-      "fetchedAt": "2026-11-20T22:18:47.983Z",
+      "fetchedAt": "2026-11-21T07:21:22.226Z",
       "http": 200
     },
     "state": {
       "status": "ok",
-      "fetchedAt": "2026-11-20T22:18:47.983Z",
+      "fetchedAt": "2026-11-21T07:21:22.226Z",
       "http": 200
     },
     "lessons": {
       "status": "ok",
-      "fetchedAt": "2026-11-20T22:18:47.983Z",
+      "fetchedAt": "2026-11-21T07:21:22.226Z",
       "http": 200
     }
   },
@@ -32,12 +32,25 @@
     "login": "halakouai-byte",
     "id": 322827745,
     "avatar_url": "https://avatars.githubusercontent.com/u/322827745?v=4",
-    "public_repos": 6,
+    "public_repos": 7,
     "followers": 0,
     "bio": "Freelance Developer",
     "created_at": "2026-08-30T14:45:53Z"
   },
   "repos": [
+    {
+      "name": "anime-news-channel",
+      "description": "Anime news Telegram channel — automated Persian news publishing (GitHub + Cloudflare)",
+      "html_url": "https://github.com/halakouai-byte/anime-news-channel",
+      "language": "Python",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-11-21T07:08:06Z",
+      "updated_at": "2026-11-20T23:44:56Z",
+      "created_at": "2026-11-20T22:30:05Z",
+      "license": "MIT",
+      "topics": []
+    },
     {
       "name": "liveforge",
       "description": "LiveForge — personal portfolio site for halakouai-byte",
@@ -45,11 +58,63 @@
       "language": "JavaScript",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-20T22:18:31Z",
-      "updated_at": "2026-11-20T20:55:19Z",
+      "pushed_at": "2026-11-21T07:21:06Z",
+      "updated_at": "2026-11-20T22:31:08Z",
       "created_at": "2026-11-20T19:53:17Z",
       "license": "MIT",
-      "topics": []
+      "topics": [
+        "cloudflare-pages",
+        "github-actions",
+        "javascript",
+        "personal-site",
+        "portfolio",
+        "static-site"
+      ]
+    },
+    {
+      "name": "telegram-channel-prompt-pack",
+      "description": "ChannelCraft Prompt Pack — 120 AI prompts to run a Telegram channel ($2 USDT on TON)",
+      "html_url": "https://github.com/halakouai-byte/telegram-channel-prompt-pack",
+      "language": "JavaScript",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-11-21T03:31:42Z",
+      "updated_at": "2026-11-20T22:29:34Z",
+      "created_at": "2026-11-20T14:39:29Z",
+      "license": null,
+      "topics": [
+        "ai-prompts",
+        "cloudflare-pages",
+        "cloudflare-workers",
+        "digital-product",
+        "prompts",
+        "telegram",
+        "telegram-bot",
+        "ton"
+      ]
+    },
+    {
+      "name": "english-vocab-daily",
+      "description": "English Vocabulary Daily — one word + one quiz every day, fully automated with GitHub Free, no AI at runtime",
+      "html_url": "https://github.com/halakouai-byte/english-vocab-daily",
+      "language": "Python",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "pushed_at": "2026-11-21T07:11:06Z",
+      "updated_at": "2026-11-20T22:28:03Z",
+      "created_at": "2026-11-18T20:07:02Z",
+      "license": "MIT",
+      "topics": [
+        "automation",
+        "english",
+        "english-learning",
+        "github-actions",
+        "quiz",
+        "telegram",
+        "telegram-bot",
+        "vocabulary",
+        "word-of-the-day"
+      ]
     },
     {
       "name": "t3n-expenseops-agent",
@@ -78,19 +143,6 @@
       "topics": []
     },
     {
-      "name": "telegram-channel-prompt-pack",
-      "description": "ChannelCraft Prompt Pack — 120 AI prompts to run a Telegram channel ($2 USDT on TON)",
-      "html_url": "https://github.com/halakouai-byte/telegram-channel-prompt-pack",
-      "language": "JavaScript",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "pushed_at": "2026-11-20T22:06:34Z",
-      "updated_at": "2026-11-20T19:31:19Z",
-      "created_at": "2026-11-20T14:39:29Z",
-      "license": null,
-      "topics": []
-    },
-    {
       "name": "halakouai-byte",
       "description": "Freelance Developer",
       "html_url": "https://github.com/halakouai-byte/halakouai-byte",
@@ -102,40 +154,27 @@
       "created_at": "2026-11-20T13:13:51Z",
       "license": null,
       "topics": []
-    },
-    {
-      "name": "english-vocab-daily",
-      "description": null,
-      "html_url": "https://github.com/halakouai-byte/english-vocab-daily",
-      "language": "Python",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "pushed_at": "2026-11-20T22:07:53Z",
-      "updated_at": "2026-11-20T12:53:27Z",
-      "created_at": "2026-11-18T20:07:02Z",
-      "license": "MIT",
-      "topics": []
     }
   ],
   "vocab": {
-    "pushed_at": "2026-11-20T22:07:53Z",
+    "pushed_at": "2026-11-21T07:11:06Z",
     "last_commit": {
-      "sha": "aa71efaa2201647fbf419aee6a2adc5adc8a13ca",
-      "shortSha": "aa71efa",
-      "date": "2026-11-20T22:07:53Z",
-      "message": "docs: add AGENTS.md — project guide for AI agents",
-      "url": "https://github.com/halakouai-byte/english-vocab-daily/commit/aa71efaa2201647fbf419aee6a2adc5adc8a13ca"
+      "sha": "3f5aebe11a7ec5d7f25b615857e5ba79007650d7",
+      "shortSha": "3f5aebe",
+      "date": "2026-11-21T07:11:05Z",
+      "message": "AGENTS.md: add section 9 GitHub read/write rule",
+      "url": "https://github.com/halakouai-byte/english-vocab-daily/commit/3f5aebe11a7ec5d7f25b615857e5ba79007650d7"
     },
     "commit_dates": [
-      "2026-11-20T12:56:09Z"
+      "2026-11-20T23:04:37Z"
     ],
     "state_commit_dates": [
-      "2026-11-20T12:56:09Z"
+      "2026-11-20T23:04:37Z"
     ],
     "state": {
       "last_index": 324,
       "last_date": "2026-11-20",
-      "last_hash": "8a7c997ff25a46d8652bf9e2ba5dcb8dd55cd1cbcb1cbd908162b340e1d5c848"
+      "last_hash": "1704aeae1a08ae876aff4671432fb5a86c1f6ee0794e2f244744de0dc52f634c"
     },
     "lessonCount": 1446,
     "lastWord": {
@@ -154,14 +193,14 @@
     }
   },
   "stats": {
-    "total_repos": 6,
+    "total_repos": 7,
     "total_stars": 0,
     "total_forks": 0,
     "languages": [
+      "Python",
       "JavaScript",
-      "TypeScript",
-      "Python"
+      "TypeScript"
     ],
-    "lastPush": "2026-11-20T22:18:31Z"
+    "lastPush": "2026-11-21T07:21:06Z"
   }
 }

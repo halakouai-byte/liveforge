@@ -92,18 +92,19 @@ outside the documented path.
   Environment variables: NONE (there is no secret to set — if anyone
   proposes adding one, stop).
 - Node version: 20 LTS (pinned in the workflows).
-- TARGET (in progress, 2026-11-21): native GitHub link — every push to
-  `main` triggers a Cloudflare Pages build. The manager is switching the
-  project to GitHub-connected (delete + recreate, destructive — needs
-  owner approval). Do NOT touch the Pages project yourself.
-- CURRENT (until the native link is proven): the Pages project is a
-  Direct Uploads project. A manager-side deploy watcher polls `main`
-  HEAD every 10 min (cron `liveforge-auto-deploy`) and, on a new commit,
-  builds and deploys `dist/` to `liveforge`, then verifies the live URL.
-  The watcher is RETIRED once the native link is proven.
-- Known trap: the dashboard "Connect to Git" flow on an existing Direct
-  Uploads project does NOT convert it (API error 8000069). The switch is
-  delete + recreate only. Do not attempt it without owner approval.
+- Native GitHub link: CONNECTED and VERIFIED (2026-11-21 07:53 Tehran,
+  manager sweep via Cloudflare API): the project is GitHub-sourced;
+  every push to `main` triggers a Cloudflare Pages build. Latest
+  git-triggered deploy: commit `4d17acd`, 01:26 UTC, stage deploy
+  success; live site returns HTTP 200. This is now the ONLY deploy
+  path. Do NOT touch the Pages project yourself.
+- Deploy watcher RETIRED (2026-11-21 07:53): cron
+  `liveforge-auto-deploy` disabled/archived (last successful run 01:44
+  Tehran). Do not re-enable it.
+- Known trap (history): the dashboard "Connect to Git" flow on an
+  existing Direct Uploads project does NOT convert it (API error
+  8000069). The switch was delete + recreate — it is DONE. Do not
+  repeat it.
 - Rollback: revert one commit on `main`; the deploy mechanism redeploys
   the previous `dist/` automatically.
 - GitHub Pages is NOT enabled (avoids duplicate canonicals).
@@ -187,14 +188,20 @@ outside the documented path.
   GitHub-sourced Pages project succeeded (HTTP 200). The native link
   can now be made via delete + recreate (destructive, owner approval
   required). Watcher stays until the native link is proven.
+- 2026-11-21 07:53 — Native Pages↔GitHub link VERIFIED (manager sweep
+  via Cloudflare API): project is GitHub-sourced, git-triggered deploys
+  succeed (latest: commit `4d17acd`, 01:26 UTC, stage deploy success;
+  live site HTTP 200). The deploy watcher (`liveforge-auto-deploy`)
+  was disabled/archived the same morning (last successful run 01:44
+  Tehran) and is retired. The native link is now the only deploy path.
 - 2026-11-21 — MIT licence added (the site already claimed MIT).
   Bio stays exactly "Freelance Developer". The unconfirmed Telegram
   handle is NEVER linked or printed anywhere on the site.
 
 ## 8. Roadmap — next / known open items
 
-- Prove the native GitHub link (delete + recreate Pages project) →
-  retire the deploy watcher cron.
+- [DONE 2026-11-21 07:53] Prove the native GitHub link (delete +
+  recreate Pages project) → retire the deploy watcher cron.
 - Post-launch QA: G1 history check + push-protection evidence; G4 live
   header check + Observatory grade; INP field confirmation (lab INP
   absent from Lighthouse JSONs; TBT 20–30 ms proxy is strong).

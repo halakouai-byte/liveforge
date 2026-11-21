@@ -3,7 +3,9 @@
 # so "latest lesson" and "last push" are never more than ~12 hours stale.
 # The cache is committed only if the fetched data changed; that commit
 # triggers a Cloudflare Pages rebuild. A failed fetch never overwrites a
-# good cache, and the build never fails because data failed.
+# good cache. The build itself never fails because data failed — but the
+# workflow FAILS loudly if the build fell back to the stale cache
+# (dist/status.json dataStale: true), so a silent stale site is impossible.
 # No token of any kind is used by this workflow.
 name: Refresh live data
 
@@ -32,6 +34,14 @@ jobs:
 
       - name: Fetch + build
         run: node scripts/build.mjs
+
+      - name: Fail loudly if the build fell back to stale cache
+        # A failed fetch used to pass silently (green run, no commit, no
+        # rebuild) while the live site quietly went stale. The build writes
+        # dist/status.json with dataStale: true on fallback — fail the run
+        # so the staleness is visible in Actions instead of silent.
+        run: |
+          node -e "const s = JSON.parse(require('fs').readFileSync('dist/status.json', 'utf8')); if (s.dataStale) { console.error('STALE: build fell back to the committed cache (fetch failed); see the build log sources.'); process.exit(1); } console.log('Live data fresh (dataStale: false).')"
 
       - name: Commit cache only if changed
         run: |

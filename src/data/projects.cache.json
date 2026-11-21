@@ -1,30 +1,30 @@
 {
-  "fetchedAt": "2026-11-21T07:21:22.226Z",
+  "fetchedAt": "2026-11-21T17:50:33.321Z",
   "dataStale": false,
   "sources": {
     "repos": {
       "status": "ok",
-      "fetchedAt": "2026-11-21T07:21:22.226Z",
+      "fetchedAt": "2026-11-21T17:50:33.321Z",
       "http": 200
     },
     "user": {
       "status": "ok",
-      "fetchedAt": "2026-11-21T07:21:22.226Z",
+      "fetchedAt": "2026-11-21T17:50:33.321Z",
       "http": 200
     },
     "vocab": {
       "status": "ok",
-      "fetchedAt": "2026-11-21T07:21:22.226Z",
+      "fetchedAt": "2026-11-21T17:50:33.321Z",
       "http": 200
     },
     "state": {
       "status": "ok",
-      "fetchedAt": "2026-11-21T07:21:22.226Z",
+      "fetchedAt": "2026-11-21T17:50:33.321Z",
       "http": 200
     },
     "lessons": {
       "status": "ok",
-      "fetchedAt": "2026-11-21T07:21:22.226Z",
+      "fetchedAt": "2026-11-21T17:50:33.321Z",
       "http": 200
     }
   },
@@ -45,7 +45,7 @@
       "language": "Python",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-21T07:08:06Z",
+      "pushed_at": "2026-11-21T17:49:53Z",
       "updated_at": "2026-11-20T23:44:56Z",
       "created_at": "2026-11-20T22:30:05Z",
       "license": "MIT",
@@ -58,7 +58,7 @@
       "language": "JavaScript",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-21T07:21:06Z",
+      "pushed_at": "2026-11-21T17:50:19Z",
       "updated_at": "2026-11-20T22:31:08Z",
       "created_at": "2026-11-20T19:53:17Z",
       "license": "MIT",
@@ -78,7 +78,7 @@
       "language": "JavaScript",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-21T03:31:42Z",
+      "pushed_at": "2026-11-21T07:40:23Z",
       "updated_at": "2026-11-20T22:29:34Z",
       "created_at": "2026-11-20T14:39:29Z",
       "license": null,
@@ -100,7 +100,7 @@
       "language": "Python",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-21T07:11:06Z",
+      "pushed_at": "2026-11-21T17:42:49Z",
       "updated_at": "2026-11-20T22:28:03Z",
       "created_at": "2026-11-18T20:07:02Z",
       "license": "MIT",
@@ -157,38 +157,40 @@
     }
   ],
   "vocab": {
-    "pushed_at": "2026-11-21T07:11:06Z",
+    "pushed_at": "2026-11-21T17:42:49Z",
     "last_commit": {
-      "sha": "3f5aebe11a7ec5d7f25b615857e5ba79007650d7",
-      "shortSha": "3f5aebe",
-      "date": "2026-11-21T07:11:05Z",
-      "message": "AGENTS.md: add section 9 GitHub read/write rule",
-      "url": "https://github.com/halakouai-byte/english-vocab-daily/commit/3f5aebe11a7ec5d7f25b615857e5ba79007650d7"
+      "sha": "6a75bef326910e66efd014a888282baf7541e520",
+      "shortSha": "6a75bef",
+      "date": "2026-11-21T17:42:47Z",
+      "message": "docs: watchdog, Nov 21 history, fix README username",
+      "url": "https://github.com/halakouai-byte/english-vocab-daily/commit/6a75bef326910e66efd014a888282baf7541e520"
     },
     "commit_dates": [
+      "2026-11-21T13:16:58Z",
       "2026-11-20T23:04:37Z"
     ],
     "state_commit_dates": [
+      "2026-11-21T13:16:58Z",
       "2026-11-20T23:04:37Z"
     ],
     "state": {
-      "last_index": 324,
-      "last_date": "2026-11-20",
-      "last_hash": "1704aeae1a08ae876aff4671432fb5a86c1f6ee0794e2f244744de0dc52f634c"
+      "last_index": 325,
+      "last_date": "2026-11-21",
+      "last_hash": "09e5456a171cc0ea654741d2e8c87bc783c3a1180bd5af4dd4b8e49c5af6d00c"
     },
     "lessonCount": 1446,
     "lastWord": {
-      "word": "fill",
-      "meaning": "to make something full",
-      "phonetic": "/fɪl/",
-      "example": "Please fill this bottle with clean water.",
-      "type": "verb",
-      "quiz_q": "What does \"fill\" mean?",
+      "word": "final",
+      "meaning": "last",
+      "phonetic": "/ˈfaɪnl/",
+      "example": "The final exam will take place in June.",
+      "type": "adjective",
+      "quiz_q": "Choose the correct meaning of \"final\".",
       "quiz_options": [
-        "to make something full",
-        "to take in liquid, information",
-        "to manage a difficult situation",
-        "to divide into parts"
+        "almost the same",
+        "last",
+        "usual and ordinary",
+        "small in amount"
       ]
     }
   },
@@ -201,6 +203,6 @@
       "JavaScript",
       "TypeScript"
     ],
-    "lastPush": "2026-11-21T07:21:06Z"
+    "lastPush": "2026-11-21T17:50:19Z"
   }
 }

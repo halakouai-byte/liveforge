@@ -234,3 +234,10 @@ outside the documented path.
   deployment, automation, or external connections MUST update this
   file in the same commit. The manager sweep checks that it stays
   current.
+- GitHub access rule (standing, owner order 2026-11-21): READS — HEAD,
+  files, commits, repo status, logs — ONLY via the GitHub connector.
+  WRITES — pushes, commits, branches, anything that changes the repo
+  or the site — NEVER via the connector. All writes go through the
+  browser, by the manager. Never use connector write tools and never
+  send a write approval card to the user: prepare the work and hand it
+  to the manager to commit via browser.

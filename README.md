@@ -92,44 +92,46 @@ config serving `dist/` as static assets, headers via the Workers
 equivalent) and is a coordinator decision for later, not a build change.
 If the team switches, this README's deploy section must be updated first.
 
-## Live data at build time (2026-11-20)
+## Live data at build time (2026-11-21)
 
-Verified live during this build (all public, unauthenticated):
+Verified live during this refresh (all public, unauthenticated):
 
-- Public repositories: **6** (plan baseline was 4 — see note below)
-- `english-vocab-daily` (Python, MIT): last push 20 Nov 2026, 13:11 UTC;
-  latest commit `42bd84a` 20 Nov 2026, 12:56 UTC, "chore: update state
-  2026-11-20"; last posted lesson #324 — "fill" — 20 Nov 2026
-- Lesson bank: **1,446** lessons in `data/lessons.json` (the README text
-  still claims 1,430 — O5 mismatch, flagged in the build log; the site
-  shows the fetched 1,446)
+- Public repositories: **7** (plan baseline was 4 — see note below)
+- `english-vocab-daily` (Python, MIT): last push 21 Nov 2026, 17:42 UTC;
+  latest commit `6a75bef` 21 Nov 2026, 17:42 UTC, "docs: watchdog, Nov 21
+  history, fix README username"; last posted lesson #325 — "final" —
+  21 Nov 2026 (state commit `a6b86fc`, 13:16 UTC)
+- Lesson bank: **1,446** lessons in `data/lessons.json` — the vocab README
+  now claims 1,446 too, so the O5 mismatch is resolved
 - `crumbboard-cookie`, `t3n-expenseops-agent` (TypeScript): last pushed
   6 Sep 2026; `halakouai-byte` (profile repo): last pushed 20 Nov 2026
 - All repos: 0 stars / 0 forks. User: 0 followers, bio "Freelance
   Developer"
-- Rate limit during this build: the shared egress IPs repeatedly showed
+- Note (20 Nov build): the shared egress IPs repeatedly showed
   `x-ratelimit-remaining: 0` (reset within the hour) and two vocab API
   calls returned 403 — the build fell back to cache for those sources
   only, logged the limit headers, and exited 0. This is the behaviour
   the architecture was designed for.
 
-Note — new repo since the plan baseline: `telegram-channel-prompt-pack`
-(JavaScript, created 20 Nov 2026, 14:39 UTC) appeared in the live repo list
-during this build. It is counted (6 repos) and appears in the activity
-ticker, but it is NOT a featured card — the three featured cards stay
-curated in `src/featured.json`. Because its name contains the word
-"telegram", the strict no-"telegram" grep flags its name/URL in
-`src/data/projects.cache.json`, `dist/data/projects.json`, and the ticker
-link in `dist/index.html`. Those matches are the repo's real public name,
-not a channel handle or link — recorded here as the false positive the
-QA gate requires (file, line, reason). No channel handle is printed or
-linked anywhere on the site.
+Note — new repos since the plan baseline: `telegram-channel-prompt-pack`
+(JavaScript, created 20 Nov 2026, 14:39 UTC) and `anime-news-channel`
+(created 20 Nov 2026, 22:30 UTC; first pushed 21 Nov 2026, 07:39 UTC)
+appeared in the live repo list. They are counted (7 repos) and appear in
+the activity ticker, but they are NOT featured cards — the three featured
+cards stay curated in `src/featured.json`. Because the prompt-pack name
+contains the word "telegram", the strict no-"telegram" grep flags its
+name/URL in `src/data/projects.cache.json`, `dist/data/projects.json`, and
+the ticker link in `dist/index.html`. Those matches are the repo's real
+public name, not a channel handle or link — recorded here as the false
+positive the QA gate requires (file, line, reason). No channel handle is
+printed or linked anywhere on the site.
 
 ## Known deviations / pending items (for the coordinator + QA)
 
-1. **Avatar file is 420×420, not 320×320.** GitHub's avatar host returns
-   420×420 for every `s=` value tried (320/400/460). The file is 3.2 KB,
-   displayed at 32 px with explicit width/height, well under budget.
+1. **Avatar file is 320×320.** The build downloads it with `?v=4&s=320`
+   (verified live 2026-11-21: 320×320, ~81 KB). An earlier note claimed
+   420×420 — that was the old avatar; the current file (new "L" logo,
+   2026-11-21) is 320×320. Displayed at 32 px with explicit width/height.
    The build re-downloads it and replaces it only if the bytes changed.
 2. **`og-image.png` exists** (added in QA phase 4, 2026-11-20): a real screenshot of
    the finished hero, 1200×630, at `assets/img/og-image.png` (copied to
@@ -177,7 +179,7 @@ liveforge/
 │   ├── css/main.css            # tokens only
 │   ├── js/main.js              # 9.6 KB: count-up, reveal, ticker, canvas
 │   ├── fonts/mona-sans-*.woff2 # variable, Latin + Latin Extended
-│   └── img/avatar.png          # build-time download (420x420, 3.2 KB)
+│   └── img/avatar.png          # build-time download (320x320, ~81 KB)
 │   └── img/favicon.svg
 ├── scripts/build.mjs           # Node stdlib only: fetch -> render -> status
 ├── .github/workflows/

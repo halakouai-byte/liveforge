@@ -126,7 +126,10 @@ outside the documented path.
 - `refresh.yml` — cron `30 7,17 * * *` UTC (07:30 and 17:30 UTC, 15 min
   after each scheduled vocabulary post) + manual dispatch: fetch + build,
   commit the cache only if it changed. That commit triggers a rebuild
-  via §4. A failed fetch never overwrites a good cache.
+  via §4. A failed fetch never overwrites a good cache. If the build
+  falls back to the stale cache (dist/status.json dataStale: true), the
+  run FAILS loudly instead of passing silently — a stale refresh must be
+  a red run, not a green no-op (2026-11-21, first critic review).
 - The build fetches live public data UNAUTHENTICATED (5 API requests +
   raw files per run: repo list, user profile, vocab repo/commits,
   vocab `data/state.json`, `data/lessons.json`, vocab README for the
@@ -190,29 +193,44 @@ outside the documented path.
   required). Watcher stays until the native link is proven.
 - 2026-11-21 07:53 — Native Pages↔GitHub link VERIFIED (manager sweep
   via Cloudflare API): project is GitHub-sourced, git-triggered deploys
-  succeed (latest: commit `4d17acd`, 01:26 UTC, stage deploy success;
-  live site HTTP 200). The deploy watcher (`liveforge-auto-deploy`)
+  succeed (live site HTTP 200). The deploy watcher (`liveforge-auto-deploy`)
   was disabled/archived the same morning (last successful run 01:44
   Tehran) and is retired. The native link is now the only deploy path.
 - 2026-11-21 — MIT licence added (the site already claimed MIT).
   Bio stays exactly "Freelance Developer". The unconfirmed Telegram
   handle is NEVER linked or printed anywhere on the site.
+- 2026-11-21 — Nav polish: `margin-left: auto` moved from `.nav-links`
+  to the `<nav>` flex item (CSS only, `assets/css/main.css`). Re-probe
+  12/12 widths + 200% zoom PASS; the links + button group is now
+  right-aligned at >=768 px (button right edge 744 at 768, 1000 at
+  1024, 1336 at 1440 = wrap content edge); the F8 band (640–644) is
+  still clean.
+- 2026-11-21 — First harsh-critic review: 188/210 (8.95/10). Top finding:
+  the scheduled refresh had fired only once, 8h late, and passed silently
+  on stale data — the refresh now fails loudly on a stale-cache fallback.
+  README snapshot, featured-card wording, and AGENTS.md staleness fixed
+  in the same change.
+- 2026-11-21 — Featured cards replaced: the two archived Superteam repos
+  are no longer featured; the cards are now English Vocabulary Daily
+  (flagship), ChannelCraft Prompt Pack, LiveForge.
 
 ## 8. Roadmap — next / known open items
 
 - [DONE 2026-11-21 07:53] Prove the native GitHub link (delete +
   recreate Pages project) → retire the deploy watcher cron.
-- Post-launch QA: G1 history check + push-protection evidence; G4 live
-  header check + Observatory grade; INP field confirmation (lab INP
-  absent from Lighthouse JSONs; TBT 20–30 ms proxy is strong).
+- Post-launch QA: G1 history check + push-protection evidence; [DONE
+  2026-11-21] G4 live header check (CSP/XFO/nosniff/referrer-policy
+  verified live; Observatory grade still unrun; HSTS still missing —
+  enable in Cloudflare); INP field confirmation (lab INP absent from
+  Lighthouse JSONs; TBT 20–30 ms proxy is strong).
 - M2 real-device check (POCO) unrun; M3–M6 (Safari/Firefox/Edge) unrun.
-- Nav polish (non-blocking): at ≥768 px the nav group is left-packed
-  (`margin-left: auto` sits on the `<ul>`, not the `<nav>`). Move the
-  auto margin to `<nav>` and re-probe.
-- Decide: keep the two archived Superteam repos as featured cards, or
-  replace them (see §7, 2026-11-21).
-- O5: the vocab README claims 1,430 lessons vs 1,446 fetched — fix the
-  upstream README, not this repo; the site shows the fetched value.
+- [DONE 2026-11-21] Nav polish: auto margin moved from the `<ul>` to
+  the `<nav>`; re-probe 12/12 widths + 200% zoom PASS (see §7).
+- [DONE 2026-11-21] Featured cards replaced: archived Superteam repos
+  out; ChannelCraft Prompt Pack + LiveForge in; English Vocabulary Daily
+  stays flagship (see §7, 2026-11-21).
+- [RESOLVED 2026-11-21] O5: the vocab README now claims 1,446, agreeing
+  with the fetched bank.
 - O4: the Telegram handle is unconfirmed — never link it until the
   owner confirms it.
 - Custom domain: none chosen yet (see §4).

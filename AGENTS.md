@@ -120,7 +120,7 @@ outside the documented path.
   scripts/build.mjs`, (3) check `dist/` output files exist,
   (4) on `main` only, commit the updated cache back
   (`src/data/projects.cache.json` + `assets/img/avatar.png`) ONLY if it
-  changed, message `chore: refresh live data cache [skip ci]`.
+  changed, message `chore: refresh live data cache`.
   Deploy is done by Cloudflare Pages from the same push — no deploy step
   here. No token of any kind is used by this workflow.
 - `refresh.yml` — cron `30 7,17 * * *` UTC (07:30 and 17:30 UTC, 15 min
@@ -216,11 +216,19 @@ outside the documented path.
 - 2026-11-21 — ChannelCraft card wording fixed (1eae1cb): "payment
   verified on-chain before delivery" → "the Worker verifies each TON
   payment on-chain before delivery" (mechanism, not a completed fact).
-- 2026-11-22 — Refresh commits no longer carry [skip ci] (70bab50 +
-  7921883): a cache commit now triggers a Cloudflare Pages deploy. Note:
-  the first two such deploys (02:59, 03:04 UTC) stayed queued/idle for
-  3+ hours — Pages deploy queue under investigation (critic review #2,
-  2026-11-22).
+- 2026-11-22 — [skip ci] removed from refresh commits: refresh.yml:51
+  (70bab50 + 7921883) and build.yml:59 (0a5c15f, 06:26 UTC). HARD RULE:
+  no commit message in this repo may contain the string "[skip ci]" —
+  not even in a sentence describing its removal. The fix commit 0a5c15f
+  itself proved it: its message ("...drop [skip ci]...") left its
+  auto-deploy c9631c5d queued/idle; the API retry 41926391 (06:28 UTC)
+  succeeded in ~12s. Every earlier stall traces to the same string in
+  the message: 70bab50, 7921883, d0dd9b7 (deploy e40816e5). A clean
+  message deploys in seconds; a message containing the string never
+  starts. Write e.g. "ci: build.yml refresh commits trigger Pages
+  deploy". The Pages queue was never broken — the skip was the whole
+  story. (Critic check item for review #3: grep recent commit messages
+  for the string; any hit is a finding.)
 
 ## 8. Roadmap — next / known open items
 

@@ -56,5 +56,5 @@ jobs:
           git config user.name "liveforge-build"
           git config user.email "liveforge-build@users.noreply.github.com"
           git add src/data/projects.cache.json assets/img/avatar.png
-          git diff --cached --quiet || git commit -m "chore: refresh live data cache [skip ci]"
+          git diff --cached --quiet || git commit -m "chore: refresh live data cache"
           git push || echo "Nothing to push or push skipped"

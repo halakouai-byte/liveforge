@@ -92,21 +92,24 @@ config serving `dist/` as static assets, headers via the Workers
 equivalent) and is a coordinator decision for later, not a build change.
 If the team switches, this README's deploy section must be updated first.
 
-## Live data at build time (2026-11-21)
+## Live data at build time
 
-Verified live during this refresh (all public, unauthenticated):
+The site renders live public GitHub data at build time (all public,
+unauthenticated) — repo list, user profile, vocab lesson bank and state,
+avatar. Numbers are NOT frozen here: a snapshot rots within a day (the
+7-repo count written on 21 Nov 2026 was already 8 the next morning, when
+`year-reset-planner` appeared). For the current values, see the live site
+(https://liveforge.pages.dev/) and `dist/status.json` (`fetchedAt`,
+`dataStale`).
 
-- Public repositories: **7** (plan baseline was 4 — see note below)
-- `english-vocab-daily` (Python, MIT): last push 21 Nov 2026, 17:42 UTC;
-  latest commit `6a75bef` 21 Nov 2026, 17:42 UTC, "docs: watchdog, Nov 21
-  history, fix README username"; last posted lesson #325 — "final" —
-  21 Nov 2026 (state commit `a6b86fc`, 13:16 UTC)
-- Lesson bank: **1,446** lessons in `data/lessons.json` — the vocab README
-  now claims 1,446 too, so the O5 mismatch is resolved
-- `crumbboard-cookie`, `t3n-expenseops-agent` (TypeScript): last pushed
-  6 Sep 2026; `halakouai-byte` (profile repo): last pushed 20 Nov 2026
-- All repos: 0 stars / 0 forks. User: 0 followers, bio "Freelance
-  Developer"
+- The build fetches the live repo list, so a new public repo appears in
+  the counts and the activity ticker automatically; featured cards stay
+  curated in `src/featured.json`.
+- Lesson bank: read from `data/lessons.json` at build time, never
+  hard-coded (O5: the vocab README and the fetched bank agree).
+- `crumbboard-cookie`, `t3n-expenseops-agent` are archived (read-only);
+  the profile repo is `halakouai-byte`. The site does not headline
+  stars/forks. The user bio is exactly "Freelance Developer".
 - Note (20 Nov build): the shared egress IPs repeatedly showed
   `x-ratelimit-remaining: 0` (reset within the hour) and two vocab API
   calls returned 403 — the build fell back to cache for those sources
@@ -114,11 +117,12 @@ Verified live during this refresh (all public, unauthenticated):
   the architecture was designed for.
 
 Note — new repos since the plan baseline: `telegram-channel-prompt-pack`
-(JavaScript, created 20 Nov 2026, 14:39 UTC) and `anime-news-channel`
+(JavaScript, created 20 Nov 2026, 14:39 UTC), `anime-news-channel`
 (created 20 Nov 2026, 22:30 UTC; first pushed 21 Nov 2026, 07:39 UTC)
-appeared in the live repo list. They are counted (7 repos) and appear in
-the activity ticker, but they are NOT featured cards — the three featured
-cards stay curated in `src/featured.json`. Because the prompt-pack name
+and `year-reset-planner` (first pushed 22 Nov 2026, 04:03 UTC) appeared
+in the live repo list. They are counted and appear in the activity
+ticker, but they are NOT featured cards — the three featured cards stay
+curated in `src/featured.json`. Because the prompt-pack name
 contains the word "telegram", the strict no-"telegram" grep flags its
 name/URL in `src/data/projects.cache.json`, `dist/data/projects.json`, and
 the ticker link in `dist/index.html`. Those matches are the repo's real

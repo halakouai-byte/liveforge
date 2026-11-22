@@ -31,7 +31,7 @@ backgrounds are only the two canvases below.
 | `--text-faint` | `#848d97` | Tertiary metadata only (e.g. "Updated …"); never body copy |
 | `--accent-green` | `#3fb950` | The single accent: activity dots, "live" pulse, success states, constellation points, count-up numbers |
 | `--accent-green-glow` | `#5fed83` | Glow / highlight only — dots, constellation highlights, live indicator. Never body text, never a button fill |
-| `--cta-green` | `#08872b` | Primary CTA button fill. White text on it |
+| `--cta-green` | `#077a26` | Primary CTA button fill. White text on it — darkened 2026-11-22 for AA margin (white-on-green 5.50:1, was 4.66:1) |
 | `--link-blue` | `#79c0ff` | All links, secondary CTA labels, code-language dots where blue applies |
 | `--link-blue-bright` | `#8dd6ff` | Hero / marketing links and the hero eyebrow only |
 | `--focus` | `#1f6feb` | Keyboard focus ring (2px outline, offset 2px) — visible on every interactive element |

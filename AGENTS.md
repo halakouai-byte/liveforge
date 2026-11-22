@@ -94,10 +94,10 @@ outside the documented path.
 - Node version: 20 LTS (pinned in the workflows).
 - Native GitHub link: CONNECTED and VERIFIED (2026-11-21 07:53 Tehran,
   manager sweep via Cloudflare API): the project is GitHub-sourced;
-  every push to `main` triggers a Cloudflare Pages build. Latest
-  git-triggered deploy: commit `4d17acd`, 01:26 UTC, stage deploy
-  success; live site returns HTTP 200. This is now the ONLY deploy
-  path. Do NOT touch the Pages project yourself.
+  every push to `main` triggers a Cloudflare Pages build (live site
+  returns HTTP 200). This is now the ONLY deploy path. Do NOT touch the
+  Pages project yourself. (No pinned "latest deploy" commit is kept here
+  — it goes stale within hours; see §7 history instead.)
 - Deploy watcher RETIRED (2026-11-21 07:53): cron
   `liveforge-auto-deploy` disabled/archived (last successful run 01:44
   Tehran). Do not re-enable it.
@@ -213,6 +213,14 @@ outside the documented path.
 - 2026-11-21 — Featured cards replaced: the two archived Superteam repos
   are no longer featured; the cards are now English Vocabulary Daily
   (flagship), ChannelCraft Prompt Pack, LiveForge.
+- 2026-11-21 — ChannelCraft card wording fixed (1eae1cb): "payment
+  verified on-chain before delivery" → "the Worker verifies each TON
+  payment on-chain before delivery" (mechanism, not a completed fact).
+- 2026-11-22 — Refresh commits no longer carry [skip ci] (70bab50 +
+  7921883): a cache commit now triggers a Cloudflare Pages deploy. Note:
+  the first two such deploys (02:59, 03:04 UTC) stayed queued/idle for
+  3+ hours — Pages deploy queue under investigation (critic review #2,
+  2026-11-22).
 
 ## 8. Roadmap — next / known open items
 

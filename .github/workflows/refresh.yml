@@ -9,21 +9,16 @@
 # No token of any kind is used by this workflow.
 name: Refresh live data
 
-
 # Least privilege: this workflow only reads the repo and pushes the
 # refreshed cache back. The default token must not stay permissive.
 permissions:
   contents: write
 
-
 on:
   schedule:
-    - cron: "30 7 * * *"→ Runs at 07:30
-
-    - cron: "30 17 * * *"→ Runs at 17:30
-
+    - cron: "30 7 * * *"
+    - cron: "30 17 * * *"
   workflow_dispatch:
-
 
 jobs:
   refresh:
@@ -32,16 +27,13 @@ jobs:
       - name: Check out
         uses: actions/checkout@v4
 
-
       - name: Set up Node 20 LTS
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-
       - name: Fetch + build
         run: node scripts/build.mjs
-
 
       - name: Fail loudly if the build fell back to stale cache
         # A failed fetch used to pass silently (green run, no commit, no
@@ -51,7 +43,6 @@ jobs:
         run: |
           node -e "const s = JSON.parse(require('fs').readFileSync('dist/status.json', 'utf8')); if (s.dataStale) { console.error('STALE: build fell back to the committed cache (fetch failed); see the build log sources.'); process.exit(1); } console.log('Live data fresh (dataStale: false).')"
 
-
       - name: Commit cache only if changed
         run: |
           git config user.name "liveforge-build"
@@ -59,4 +50,3 @@ jobs:
           git add src/data/projects.cache.json assets/img/avatar.png
           git diff --cached --quiet || git commit -m "chore: refresh live data cache"
           git push || echo "Nothing to push or push skipped"
-

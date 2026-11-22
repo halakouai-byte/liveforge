@@ -1,30 +1,30 @@
 {
-  "fetchedAt": "2026-11-22T06:36:15.108Z",
+  "fetchedAt": "2026-11-22T15:32:38.973Z",
   "dataStale": false,
   "sources": {
     "repos": {
       "status": "ok",
-      "fetchedAt": "2026-11-22T06:36:15.108Z",
+      "fetchedAt": "2026-11-22T15:32:38.973Z",
       "http": 200
     },
     "user": {
       "status": "ok",
-      "fetchedAt": "2026-11-22T06:36:15.108Z",
+      "fetchedAt": "2026-11-22T15:32:38.973Z",
       "http": 200
     },
     "vocab": {
       "status": "ok",
-      "fetchedAt": "2026-11-22T06:36:15.108Z",
+      "fetchedAt": "2026-11-22T15:32:38.973Z",
       "http": 200
     },
     "state": {
       "status": "ok",
-      "fetchedAt": "2026-11-22T06:36:15.108Z",
+      "fetchedAt": "2026-11-22T15:32:38.973Z",
       "http": 200
     },
     "lessons": {
       "status": "ok",
-      "fetchedAt": "2026-11-22T06:36:15.108Z",
+      "fetchedAt": "2026-11-22T15:32:38.973Z",
       "http": 200
     }
   },
@@ -58,7 +58,7 @@
       "language": "Python",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-22T06:32:04Z",
+      "pushed_at": "2026-11-22T15:12:54Z",
       "updated_at": "2026-11-20T23:44:56Z",
       "created_at": "2026-11-20T22:30:05Z",
       "license": "MIT",
@@ -71,7 +71,7 @@
       "language": "JavaScript",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-22T06:36:04Z",
+      "pushed_at": "2026-11-22T06:36:16Z",
       "updated_at": "2026-11-20T22:31:08Z",
       "created_at": "2026-11-20T19:53:17Z",
       "license": "MIT",
@@ -113,7 +113,7 @@
       "language": "Python",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-22T06:26:53Z",
+      "pushed_at": "2026-11-22T15:15:08Z",
       "updated_at": "2026-11-20T22:28:03Z",
       "created_at": "2026-11-18T20:07:02Z",
       "license": "MIT",
@@ -170,38 +170,41 @@
     }
   ],
   "vocab": {
-    "pushed_at": "2026-11-22T06:26:53Z",
+    "pushed_at": "2026-11-22T15:15:08Z",
     "last_commit": {
-      "sha": "6230b338cc6dd6c3ce5981d9a3950090b3f82bd6",
-      "shortSha": "6230b33",
-      "date": "2026-11-22T06:26:51Z",
-      "message": "docs: Poll + Day label, setup checklist rewrite, add CHANNEL_SETUP.md",
-      "url": "https://github.com/halakouai-byte/english-vocab-daily/commit/6230b338cc6dd6c3ce5981d9a3950090b3f82bd6"
+      "sha": "7379e1fabe80cc926ceef9e8ee576f673e652ebd",
+      "shortSha": "7379e1f",
+      "date": "2026-11-22T15:15:08Z",
+      "message": "chore: update state 2026-11-22",
+      "url": "https://github.com/halakouai-byte/english-vocab-daily/commit/7379e1fabe80cc926ceef9e8ee576f673e652ebd"
     },
     "commit_dates": [
-      "2026-11-21T13:16:58Z"
+      "2026-11-22T15:15:08Z",
+      "2026-11-22T10:30:37Z"
     ],
     "state_commit_dates": [
-      "2026-11-21T13:16:58Z"
+      "2026-11-22T15:15:08Z",
+      "2026-11-22T10:30:37Z"
     ],
     "state": {
-      "last_index": 325,
-      "last_date": "2026-11-21",
-      "last_hash": "09e5456a171cc0ea654741d2e8c87bc783c3a1180bd5af4dd4b8e49c5af6d00c"
+      "last_index": 326,
+      "last_date": "2026-11-22",
+      "last_hash": "2fe2cea038b547a67c97f6208ea52c2a52056b6767ddeae03c8f42a9d4e67618",
+      "last_kind": "quiz"
     },
     "lessonCount": 1446,
     "lastWord": {
-      "word": "final",
-      "meaning": "last",
-      "phonetic": "/ˈfaɪnl/",
-      "example": "The final exam will take place in June.",
-      "type": "adjective",
-      "quiz_q": "Choose the correct meaning of \"final\".",
+      "word": "finance",
+      "meaning": "money and banking",
+      "phonetic": "/ˈfaɪnæns/",
+      "example": "She works in finance at a large bank in London.",
+      "type": "noun",
+      "quiz_q": "Which of these means \"finance\"?",
       "quiz_options": [
-        "almost the same",
-        "last",
-        "usual and ordinary",
-        "small in amount"
+        "a part of a text",
+        "money and banking",
+        "a drink made from grapes",
+        "rules made by a government"
       ]
     }
   },
@@ -214,6 +217,6 @@
       "Python",
       "TypeScript"
     ],
-    "lastPush": "2026-11-22T06:36:04Z"
+    "lastPush": "2026-11-22T15:15:08Z"
   }
 }

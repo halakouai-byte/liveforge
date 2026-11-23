@@ -15,8 +15,10 @@
  * C vocab repo — DERIVED from A (the repos list already carries
  * english-vocab-daily's pushed_at; no separate call, so a rate-limited
  * vocab call can never hide a value A already returned),
- * D vocab latest commits (per_page=7 — same single request, also feeds the
- * 7-day posting strip), E vocab state.json (raw), F avatar download,
+ * D vocab latest commits (per_page=30 — same single request, also feeds the
+ * 7-day posting strip; 30 because non-state commits interleave, so 7 missed
+ * state commits from earlier in the week), E vocab state.json (raw),
+ * F avatar download,
  * G lessons.json (raw — lesson count + last posted word and quiz; never hard-coded),
  * H vocab README (raw — the lesson count the README claims, for the O5
  * mismatch flag only).
@@ -212,7 +214,7 @@ async function main() {
   if (fresh && !rateLimited) {
     const [userRes, commitsRes, stateRes, lessonsRes, readmeRes] = await Promise.all([
       fetchJson(`${API}/users/${USER}`, "user"),
-      fetchJson(`${API}/repos/${USER}/${VOCAB}/commits?per_page=7`, "vocab-commits"),
+      fetchJson(`${API}/repos/${USER}/${VOCAB}/commits?per_page=30`, "vocab-commits"),
       (async () => {
         try {
           const r = await fetchOnce(`${RAW}/${USER}/${VOCAB}/main/data/state.json`, "text");
@@ -287,11 +289,14 @@ async function main() {
       /* F2: the 7-day strip counts POSTS, not commits. Only a commit whose
          message starts "chore: update state" is a post — the 18 Nov
          "Initial commit" is repo setup, not a post, and must never render
-         as a posted day. */
+         as a posted day. Dates are filtered to the 7 days before the
+         build (startedAt), not the last 7 commits — non-state commits
+         interleave, so a count-based window misses earlier posts. */
       stateCommitDates = commitsRes.data
         .filter((x) => (x.commit?.message || "").startsWith("chore: update state"))
         .map((x) => x.commit?.committer?.date)
-        .filter(Boolean);
+        .filter(Boolean)
+        .filter((d) => new Date(d) >= new Date(startedAt.getTime() - 7 * 24 * 3600 * 1000));
       /* R1: commit_dates carries the same filtered POST list, so a future
          consumer reading it gets post dates, not every commit. */
       commitDates = stateCommitDates;
@@ -427,10 +432,10 @@ async function main() {
       dataStale = true;
     }
   }
-  /* dataStale is also true when fetchedAt is more than 24h old. */
+  /* dataStale is also true when fetchedAt is more than 12h old. */
   if (fetchedAt) {
     const ageH = (now - new Date(fetchedAt)) / 3600000;
-    if (ageH > 24) { data.dataStale = true; dataStale = true; warn(`fetched data is ${ageH.toFixed(1)}h old — marking stale`); }
+    if (ageH > 12) { data.dataStale = true; dataStale = true; warn(`fetched data is ${ageH.toFixed(1)}h old — marking stale`); }
   }
   const cacheAgeHours = fetchedAt ? Math.max(0, Math.round(((now - new Date(fetchedAt)) / 3600000) * 10) / 10) : null;
 

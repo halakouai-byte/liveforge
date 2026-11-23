@@ -210,6 +210,21 @@ outside the documented path.
   on stale data — the refresh now fails loudly on a stale-cache fallback.
   README snapshot, featured-card wording, and AGENTS.md staleness fixed
   in the same change.
+- 2026-11-22 — Second harsh-critic review: 182/210 (8.67/10). Top finding:
+  Pages deploy queue stalled — root cause was the "[skip ci]" string in
+  commit messages; resolved by API retry 9efc5d87 + the hard rule.
+- 2026-11-23 — Third harsh-critic review: 191/210 (9.10/10). Top finding:
+  the 7-day strip missed 2 days of posts (per_page=7 fetch — non-state
+  commits interleave); fixed with per_page=30 + a 7-day date filter.
+  Stale threshold tightened 24h → 12h to match the "~12h" promise in
+  refresh.yml.
+- 2026-11-23 — HSTS (manager decision): NOT configurable on pages.dev
+  with this account (0 zones) — needs a custom domain. Stays open until
+  the owner's domain decision.
+- 2026-11-23 — Refresh dispatch (manager decision): NOT implemented —
+  needs a PAT created by the owner; both daily slots arrive (5–8h late);
+  the delay is honestly labelled by the 12h stale threshold. Revisit if
+  a slot ever fails to arrive.
 - 2026-11-21 — Featured cards replaced: the two archived Superteam repos
   are no longer featured; the cards are now English Vocabulary Daily
   (flagship), ChannelCraft Prompt Pack, LiveForge.
@@ -227,8 +242,9 @@ outside the documented path.
   message deploys in seconds; a message containing the string never
   starts. Write e.g. "ci: build.yml refresh commits trigger Pages
   deploy". The Pages queue was never broken — the skip was the whole
-  story. (Critic check item for review #3: grep recent commit messages
-  for the string; any hit is a finding.)
+  story. (Critic check item: grep commit messages after 3331d65 for the
+  string; any hit is a finding. Earlier messages are historic — a literal
+  grep of history will still hit them.)
 
 ## 8. Roadmap — next / known open items
 

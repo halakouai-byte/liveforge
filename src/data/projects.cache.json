@@ -1,30 +1,30 @@
 {
-  "fetchedAt": "2026-11-23T06:27:06.596Z",
+  "fetchedAt": "2026-11-23T16:16:10.275Z",
   "dataStale": false,
   "sources": {
     "repos": {
       "status": "ok",
-      "fetchedAt": "2026-11-23T06:27:06.596Z",
+      "fetchedAt": "2026-11-23T16:16:10.275Z",
       "http": 200
     },
     "user": {
       "status": "ok",
-      "fetchedAt": "2026-11-23T06:27:06.596Z",
+      "fetchedAt": "2026-11-23T16:16:10.275Z",
       "http": 200
     },
     "vocab": {
       "status": "ok",
-      "fetchedAt": "2026-11-23T06:27:06.596Z",
+      "fetchedAt": "2026-11-23T16:16:10.275Z",
       "http": 200
     },
     "state": {
       "status": "ok",
-      "fetchedAt": "2026-11-23T06:27:06.596Z",
+      "fetchedAt": "2026-11-23T16:16:10.275Z",
       "http": 200
     },
     "lessons": {
       "status": "ok",
-      "fetchedAt": "2026-11-23T06:27:06.596Z",
+      "fetchedAt": "2026-11-23T16:16:10.275Z",
       "http": 200
     }
   },
@@ -58,7 +58,7 @@
       "language": "Python",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-23T03:39:06Z",
+      "pushed_at": "2026-11-23T16:15:59Z",
       "updated_at": "2026-11-20T23:44:56Z",
       "created_at": "2026-11-20T22:30:05Z",
       "license": "MIT",
@@ -71,7 +71,7 @@
       "language": "JavaScript",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-23T06:26:55Z",
+      "pushed_at": "2026-11-23T06:32:38Z",
       "updated_at": "2026-11-20T22:31:08Z",
       "created_at": "2026-11-20T19:53:17Z",
       "license": "MIT",
@@ -113,7 +113,7 @@
       "language": "Python",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-22T15:15:08Z",
+      "pushed_at": "2026-11-23T16:13:57Z",
       "updated_at": "2026-11-20T22:28:03Z",
       "created_at": "2026-11-18T20:07:02Z",
       "license": "MIT",
@@ -170,15 +170,16 @@
     }
   ],
   "vocab": {
-    "pushed_at": "2026-11-22T15:15:08Z",
+    "pushed_at": "2026-11-23T16:13:57Z",
     "last_commit": {
-      "sha": "7379e1fabe80cc926ceef9e8ee576f673e652ebd",
-      "shortSha": "7379e1f",
-      "date": "2026-11-22T15:15:08Z",
-      "message": "chore: update state 2026-11-22",
-      "url": "https://github.com/halakouai-byte/english-vocab-daily/commit/7379e1fabe80cc926ceef9e8ee576f673e652ebd"
+      "sha": "453a366770046e16f62fb10576562c6a11e25c98",
+      "shortSha": "453a366",
+      "date": "2026-11-23T16:13:55Z",
+      "message": "chore: update state 2026-11-23",
+      "url": "https://github.com/halakouai-byte/english-vocab-daily/commit/453a366770046e16f62fb10576562c6a11e25c98"
     },
     "commit_dates": [
+      "2026-11-23T16:13:55Z",
       "2026-11-22T15:15:08Z",
       "2026-11-22T10:30:37Z",
       "2026-11-21T13:16:58Z",
@@ -186,6 +187,7 @@
       "2026-11-20T12:56:09Z"
     ],
     "state_commit_dates": [
+      "2026-11-23T16:13:55Z",
       "2026-11-22T15:15:08Z",
       "2026-11-22T10:30:37Z",
       "2026-11-21T13:16:58Z",
@@ -193,24 +195,24 @@
       "2026-11-20T12:56:09Z"
     ],
     "state": {
-      "last_index": 326,
-      "last_date": "2026-11-22",
-      "last_hash": "2fe2cea038b547a67c97f6208ea52c2a52056b6767ddeae03c8f42a9d4e67618",
-      "last_kind": "quiz"
+      "last_index": 327,
+      "last_date": "2026-11-23",
+      "last_hash": "7b92b79ce28675a26747a43762d9e7b445fa5622bb6e3a5ff4ddbc9f460ca41d",
+      "last_kind": "word"
     },
     "lessonCount": 1446,
     "lastWord": {
-      "word": "finance",
-      "meaning": "money and banking",
-      "phonetic": "/ˈfaɪnæns/",
-      "example": "She works in finance at a large bank in London.",
-      "type": "noun",
-      "quiz_q": "Which of these means \"finance\"?",
+      "word": "find",
+      "meaning": "to discover something",
+      "phonetic": "/faɪnd/",
+      "example": "I cannot find my keys anywhere in the house.",
+      "type": "verb",
+      "quiz_q": "\"find\" means...?",
       "quiz_options": [
-        "a part of a text",
-        "money and banking",
-        "a drink made from grapes",
-        "rules made by a government"
+        "to guess an amount or value",
+        "to tell someone about something",
+        "to discover something",
+        "to prepare food with heat"
       ]
     }
   },
@@ -223,6 +225,6 @@
       "Python",
       "TypeScript"
     ],
-    "lastPush": "2026-11-23T06:26:55Z"
+    "lastPush": "2026-11-23T16:15:59Z"
   }
 }

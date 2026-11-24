@@ -158,9 +158,9 @@ printed or linked anywhere on the site.
    (messages starting `chore: update state`) in the last 30 vocab commits,
    filtered to the 7 days ending at state.last_date. The 18 Nov 2026
    `Initial commit` is repo setup, not a post, so it never shows as posted.
-   State-update commits exist for 20, 21 and 22 Nov 2026, so those days
-   show as posted. (The fetch used to be per_page=7 — too few, because
-   non-state commits interleave; it missed 20 and 21 Nov.)
+   State-update commits exist for each posting day; the strip shows the
+   7 days ending at state.last_date. (The fetch used to be per_page=7 —
+   too few, because non-state commits interleave; it missed 20 and 21 Nov.)
 7. **JSON-LD block:** the `<script type="application/ld+json">` block in
    `index.html` is a data block, not executable script; it is allowed
    under the strict `script-src 'self'` CSP. There are no other inline

@@ -218,13 +218,27 @@ outside the documented path.
   commits interleave); fixed with per_page=30 + a 7-day date filter.
   Stale threshold tightened 24h → 12h to match the "~12h" promise in
   refresh.yml.
+- 2026-11-24 — Fourth harsh-critic review: 188/210 (8.95/10). Top finding:
+  the scheduler delay grew to 10–12h — both 23 Nov slots were created, just
+  late (run #6 = 07:30 slot, 11h54m late; run #7 = 17:30 slot, 9h54m late);
+  the 23 Nov freshness was saved by the manual 16:16 dispatch. Also: a new
+  axe serious (.code-panel without tabindex) and README #6 stale again.
 - 2026-11-23 — HSTS (manager decision): NOT configurable on pages.dev
   with this account (0 zones) — needs a custom domain. Stays open until
   the owner's domain decision.
+- 2026-11-24 — HSTS (manager decision): added to _headers
+  (Strict-Transport-Security: max-age=31536000; includeSubDomains) —
+  supersedes the 2026-11-23 entry; no custom domain needed. Verify live
+  after deploy.
 - 2026-11-23 — Refresh dispatch (manager decision): NOT implemented —
-  needs a PAT created by the owner; both daily slots arrive (5–8h late);
-  the delay is honestly labelled by the 12h stale threshold. Revisit if
-  a slot ever fails to arrive.
+  needs a PAT created by the owner; both daily slots arrive (9–12h late
+  as of 23 Nov — run #6 = 07:30 slot, 11h54m late; run #7 = 17:30 slot,
+  9h54m late). The 23 Nov freshness was saved by the manual 16:16 UTC
+  dispatch — without it, data age would have hit 12h52m by 19:24. Manual
+  dispatch is now the official backup: if a slot has not been created by
+  ~14:00 UTC, the manager runs refresh manually. repository_dispatch from
+  the vocab repo is NOT done for now (needs a cross-repo token — an owner
+  step, reviewed later). Revisit if lateness exceeds 12h.
 - 2026-11-21 — Featured cards replaced: the two archived Superteam repos
   are no longer featured; the cards are now English Vocabulary Daily
   (flagship), ChannelCraft Prompt Pack, LiveForge.

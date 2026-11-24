@@ -1,6 +1,9 @@
 # LiveForge — twice-daily live-data refresh.
-# Runs 15 minutes after each scheduled vocabulary post (07:15 / 17:15 UTC),
-# so "latest lesson" and "last push" are never more than ~12 hours stale.
+# Runs 15 minutes after each scheduled vocabulary post (07:15 / 17:15 UTC).
+# GitHub's scheduler runs 9–12h late (as of 23 Nov 2026), so the data can
+# pass 12h old in the worst case — the 12h stale threshold then labels the
+# page stale honestly, and the manual dispatch backup (manager runs refresh
+# if a slot has not been created by ~14:00 UTC) keeps it fresh.
 # The cache is committed only if the fetched data changed; that commit
 # triggers a Cloudflare Pages rebuild. A failed fetch never overwrites a
 # good cache. The build itself never fails because data failed — but the

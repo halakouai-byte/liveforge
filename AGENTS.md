@@ -223,6 +223,9 @@ outside the documented path.
   late (run #6 = 07:30 slot, 11h54m late; run #7 = 17:30 slot, 9h54m late);
   the 23 Nov freshness was saved by the manual 16:16 dispatch. Also: a new
   axe serious (.code-panel without tabindex) and README #6 stale again.
+    Bundle landed as two commits (467f179 + 5bef010, same message) —
+    one-bundle-one-commit NOT followed; cause: github.dev sudo-mode, Gmail
+    not connected.
 - 2026-11-23 — HSTS (manager decision): NOT configurable on pages.dev
   with this account (0 zones) — needs a custom domain. Stays open until
   the owner's domain decision.
@@ -230,18 +233,18 @@ outside the documented path.
   (Strict-Transport-Security: max-age=31536000; includeSubDomains) —
   supersedes the 2026-11-23 entry; no custom domain needed. Verify live
   after deploy.
-- 2026-11-23 — Refresh dispatch (manager decision): NOT implemented —
-  needs a PAT created by the owner; both daily slots arrive (up to ~18h
-  late as of 24 Nov — run #6 = 07:30 slot 23 Nov, 11h54m late; run #7 =
-  17:30 slot 23 Nov, 9h54m late; run #10 = 07:30 slot 24 Nov, ~18h late,
-  created 01:29 UTC 25 Nov, after the manual 13:58 dispatch had already
-  covered that slot; run #9 = 17:30 slot 24 Nov, 1h30m late). The 23 Nov
-  freshness was saved by the manual 16:16 UTC dispatch — without it, data
-  age would have hit 12h52m by 19:24. Manual dispatch is now the official
-  backup: if a slot has not been created by ~14:00 UTC, the manager runs
-  refresh manually. repository_dispatch from the vocab repo is NOT done for
-  now (needs a cross-repo token — an owner step, reviewed later). Revisit
-  if lateness exceeds 12h — MET on 24 Nov (~18h); revisit due.
+- 2026-11-23 — Refresh dispatch (manager decision, closed 2026-11-25):
+  manual dispatch is the PERMANENT backup — repository_dispatch from the
+  vocab repo will NOT be implemented (it needed a cross-repo PAT from the
+  owner). Both daily slots arrive (up to ~18h late as of 24 Nov — run #6 =
+    07:30 slot 23 Nov, 11h54m late; run #7 = 17:30 slot 23 Nov, 9h54m late;
+    run #10 = 07:30 slot 24 Nov, ~18h late, created 01:29 UTC 25 Nov, after
+      the manual 13:58 dispatch had already covered that slot; run #9 = 17:30
+    slot 24 Nov, 1h30m late). The 23 Nov freshness was saved by the manual
+    16:16 UTC dispatch — without it, data age would have hit 12h52m by 19:24.
+    Manual dispatch rule: if a slot has not been created by ~14:00 UTC, the
+    manager runs refresh manually. The "revisit if lateness exceeds 12h"
+    condition was MET on 24 Nov (~18h) and is CLOSED by this decision.
 - 2026-11-21 — Featured cards replaced: the two archived Superteam repos
   are no longer featured; the cards are now English Vocabulary Daily
   (flagship), ChannelCraft Prompt Pack, LiveForge.

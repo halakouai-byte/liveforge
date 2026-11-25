@@ -231,14 +231,17 @@ outside the documented path.
   supersedes the 2026-11-23 entry; no custom domain needed. Verify live
   after deploy.
 - 2026-11-23 — Refresh dispatch (manager decision): NOT implemented —
-  needs a PAT created by the owner; both daily slots arrive (9–12h late
-  as of 23 Nov — run #6 = 07:30 slot, 11h54m late; run #7 = 17:30 slot,
-  9h54m late). The 23 Nov freshness was saved by the manual 16:16 UTC
-  dispatch — without it, data age would have hit 12h52m by 19:24. Manual
-  dispatch is now the official backup: if a slot has not been created by
-  ~14:00 UTC, the manager runs refresh manually. repository_dispatch from
-  the vocab repo is NOT done for now (needs a cross-repo token — an owner
-  step, reviewed later). Revisit if lateness exceeds 12h.
+  needs a PAT created by the owner; both daily slots arrive (up to ~18h
+  late as of 24 Nov — run #6 = 07:30 slot 23 Nov, 11h54m late; run #7 =
+  17:30 slot 23 Nov, 9h54m late; run #10 = 07:30 slot 24 Nov, ~18h late,
+  created 01:29 UTC 25 Nov, after the manual 13:58 dispatch had already
+  covered that slot; run #9 = 17:30 slot 24 Nov, 1h30m late). The 23 Nov
+  freshness was saved by the manual 16:16 UTC dispatch — without it, data
+  age would have hit 12h52m by 19:24. Manual dispatch is now the official
+  backup: if a slot has not been created by ~14:00 UTC, the manager runs
+  refresh manually. repository_dispatch from the vocab repo is NOT done for
+  now (needs a cross-repo token — an owner step, reviewed later). Revisit
+  if lateness exceeds 12h — MET on 24 Nov (~18h); revisit due.
 - 2026-11-21 — Featured cards replaced: the two archived Superteam repos
   are no longer featured; the cards are now English Vocabulary Daily
   (flagship), ChannelCraft Prompt Pack, LiveForge.

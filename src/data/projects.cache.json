@@ -1,30 +1,30 @@
 {
-  "fetchedAt": "2026-11-27T01:06:03.463Z",
+  "fetchedAt": "2026-11-27T17:35:35.323Z",
   "dataStale": false,
   "sources": {
     "repos": {
       "status": "ok",
-      "fetchedAt": "2026-11-27T01:06:03.463Z",
+      "fetchedAt": "2026-11-27T17:35:35.323Z",
       "http": 200
     },
     "user": {
       "status": "ok",
-      "fetchedAt": "2026-11-27T01:06:03.463Z",
+      "fetchedAt": "2026-11-27T17:35:35.323Z",
       "http": 200
     },
     "vocab": {
       "status": "ok",
-      "fetchedAt": "2026-11-27T01:06:03.463Z",
+      "fetchedAt": "2026-11-27T17:35:35.323Z",
       "http": 200
     },
     "state": {
       "status": "ok",
-      "fetchedAt": "2026-11-27T01:06:03.463Z",
+      "fetchedAt": "2026-11-27T17:35:35.323Z",
       "http": 200
     },
     "lessons": {
       "status": "ok",
-      "fetchedAt": "2026-11-27T01:06:03.463Z",
+      "fetchedAt": "2026-11-27T17:35:35.323Z",
       "http": 200
     }
   },
@@ -58,7 +58,7 @@
       "language": "Python",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-26T22:22:00Z",
+      "pushed_at": "2026-11-27T17:01:01Z",
       "updated_at": "2026-11-20T23:44:56Z",
       "created_at": "2026-11-20T22:30:05Z",
       "license": "MIT",
@@ -71,7 +71,7 @@
       "language": "JavaScript",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-26T17:50:24Z",
+      "pushed_at": "2026-11-27T01:06:05Z",
       "updated_at": "2026-11-20T22:31:08Z",
       "created_at": "2026-11-20T19:53:17Z",
       "license": "MIT",
@@ -113,7 +113,7 @@
       "language": "Python",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-26T17:41:27Z",
+      "pushed_at": "2026-11-27T17:26:37Z",
       "updated_at": "2026-11-20T22:28:03Z",
       "created_at": "2026-11-18T20:07:02Z",
       "license": "MIT",
@@ -170,15 +170,16 @@
     }
   ],
   "vocab": {
-    "pushed_at": "2026-11-26T17:41:27Z",
+    "pushed_at": "2026-11-27T17:26:37Z",
     "last_commit": {
-      "sha": "65f6369678d966c33a7453f774401b69a9833446",
-      "shortSha": "65f6369",
-      "date": "2026-11-26T17:41:26Z",
-      "message": "chore: update state 2026-11-26",
-      "url": "https://github.com/halakouai-byte/english-vocab-daily/commit/65f6369678d966c33a7453f774401b69a9833446"
+      "sha": "dcbfc3069666ce420b67dd7d712636cc3eecefeb",
+      "shortSha": "dcbfc30",
+      "date": "2026-11-27T17:26:36Z",
+      "message": "chore: update state 2026-11-27",
+      "url": "https://github.com/halakouai-byte/english-vocab-daily/commit/dcbfc3069666ce420b67dd7d712636cc3eecefeb"
     },
     "commit_dates": [
+      "2026-11-27T17:26:36Z",
       "2026-11-26T17:41:26Z",
       "2026-11-25T17:56:24Z",
       "2026-11-25T07:37:00Z",
@@ -192,6 +193,7 @@
       "2026-11-20T23:04:37Z"
     ],
     "state_commit_dates": [
+      "2026-11-27T17:26:36Z",
       "2026-11-26T17:41:26Z",
       "2026-11-25T17:56:24Z",
       "2026-11-25T07:37:00Z",
@@ -205,24 +207,24 @@
       "2026-11-20T23:04:37Z"
     ],
     "state": {
-      "last_index": 330,
-      "last_date": "2026-11-26",
-      "last_hash": "de853f3acd93d4e8cde5e7566fe4c2a8870f7045795786d6ed4db08e86afe35a",
+      "last_index": 331,
+      "last_date": "2026-11-27",
+      "last_hash": "0afdd3d2ae1cb89c3b2849962fcab114309dcac45d03c37afbfe0c60299f7fb4",
       "last_kind": "quiz"
     },
     "lessonCount": 1446,
     "lastWord": {
-      "word": "finish",
-      "meaning": "to complete something",
-      "phonetic": "/ˈfɪnɪʃ/",
-      "example": "Please finish your homework before dinner.",
-      "type": "verb",
-      "quiz_q": "Which of these means \"finish\"?",
+      "word": "firm",
+      "meaning": "a company",
+      "phonetic": "/fɜːm/",
+      "example": "She works for a large law firm in the city.",
+      "type": "noun",
+      "quiz_q": "\"firm\" means...?",
       "quiz_options": [
-        "to be real or alive",
-        "to complete something",
-        "to get away from something",
-        "to move forward or make progress"
+        "an expert",
+        "the direction of the sunset",
+        "a company",
+        "a device for cooking"
       ]
     }
   },
@@ -235,6 +237,6 @@
       "Python",
       "TypeScript"
     ],
-    "lastPush": "2026-11-26T22:22:00Z"
+    "lastPush": "2026-11-27T17:26:37Z"
   }
 }

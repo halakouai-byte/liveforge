@@ -1,30 +1,30 @@
 {
-  "fetchedAt": "2026-11-28T00:37:56.635Z",
+  "fetchedAt": "2026-11-28T16:19:13.145Z",
   "dataStale": false,
   "sources": {
     "repos": {
       "status": "ok",
-      "fetchedAt": "2026-11-28T00:37:56.635Z",
+      "fetchedAt": "2026-11-28T16:19:13.145Z",
       "http": 200
     },
     "user": {
       "status": "ok",
-      "fetchedAt": "2026-11-28T00:37:56.635Z",
+      "fetchedAt": "2026-11-28T16:19:13.145Z",
       "http": 200
     },
     "vocab": {
       "status": "ok",
-      "fetchedAt": "2026-11-28T00:37:56.635Z",
+      "fetchedAt": "2026-11-28T16:19:13.145Z",
       "http": 200
     },
     "state": {
       "status": "ok",
-      "fetchedAt": "2026-11-28T00:37:56.635Z",
+      "fetchedAt": "2026-11-28T16:19:13.145Z",
       "http": 200
     },
     "lessons": {
       "status": "ok",
-      "fetchedAt": "2026-11-28T00:37:56.635Z",
+      "fetchedAt": "2026-11-28T16:19:13.145Z",
       "http": 200
     }
   },
@@ -58,7 +58,7 @@
       "language": "Python",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-27T22:13:01Z",
+      "pushed_at": "2026-11-28T15:32:17Z",
       "updated_at": "2026-11-20T23:44:56Z",
       "created_at": "2026-11-20T22:30:05Z",
       "license": "MIT",
@@ -71,7 +71,7 @@
       "language": "JavaScript",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-27T17:35:37Z",
+      "pushed_at": "2026-11-28T00:37:59Z",
       "updated_at": "2026-11-20T22:31:08Z",
       "created_at": "2026-11-20T19:53:17Z",
       "license": "MIT",
@@ -113,7 +113,7 @@
       "language": "Python",
       "stargazers_count": 0,
       "forks_count": 0,
-      "pushed_at": "2026-11-27T17:26:37Z",
+      "pushed_at": "2026-11-28T16:08:27Z",
       "updated_at": "2026-11-20T22:28:03Z",
       "created_at": "2026-11-18T20:07:02Z",
       "license": "MIT",
@@ -170,15 +170,16 @@
     }
   ],
   "vocab": {
-    "pushed_at": "2026-11-27T17:26:37Z",
+    "pushed_at": "2026-11-28T16:08:27Z",
     "last_commit": {
-      "sha": "dcbfc3069666ce420b67dd7d712636cc3eecefeb",
-      "shortSha": "dcbfc30",
-      "date": "2026-11-27T17:26:36Z",
-      "message": "chore: update state 2026-11-27",
-      "url": "https://github.com/halakouai-byte/english-vocab-daily/commit/dcbfc3069666ce420b67dd7d712636cc3eecefeb"
+      "sha": "23b640c7787ee282f0f336c0dcf184818f5d3d5f",
+      "shortSha": "23b640c",
+      "date": "2026-11-28T16:08:25Z",
+      "message": "chore: update state 2026-11-28",
+      "url": "https://github.com/halakouai-byte/english-vocab-daily/commit/23b640c7787ee282f0f336c0dcf184818f5d3d5f"
     },
     "commit_dates": [
+      "2026-11-28T16:08:25Z",
       "2026-11-27T17:26:36Z",
       "2026-11-26T17:41:26Z",
       "2026-11-25T17:56:24Z",
@@ -188,10 +189,10 @@
       "2026-11-23T17:57:40Z",
       "2026-11-23T16:13:55Z",
       "2026-11-22T15:15:08Z",
-      "2026-11-22T10:30:37Z",
-      "2026-11-21T13:16:58Z"
+      "2026-11-22T10:30:37Z"
     ],
     "state_commit_dates": [
+      "2026-11-28T16:08:25Z",
       "2026-11-27T17:26:36Z",
       "2026-11-26T17:41:26Z",
       "2026-11-25T17:56:24Z",
@@ -201,28 +202,27 @@
       "2026-11-23T17:57:40Z",
       "2026-11-23T16:13:55Z",
       "2026-11-22T15:15:08Z",
-      "2026-11-22T10:30:37Z",
-      "2026-11-21T13:16:58Z"
+      "2026-11-22T10:30:37Z"
     ],
     "state": {
-      "last_index": 331,
-      "last_date": "2026-11-27",
-      "last_hash": "0afdd3d2ae1cb89c3b2849962fcab114309dcac45d03c37afbfe0c60299f7fb4",
+      "last_index": 332,
+      "last_date": "2026-11-28",
+      "last_hash": "d60247f87010f96d3c2d18508a06f4429d7f4dfd3f4472407df99e3d1fa46435",
       "last_kind": "quiz"
     },
     "lessonCount": 1446,
     "lastWord": {
-      "word": "firm",
-      "meaning": "a company",
-      "phonetic": "/fɜːm/",
-      "example": "She works for a large law firm in the city.",
-      "type": "noun",
-      "quiz_q": "\"firm\" means...?",
+      "word": "first",
+      "meaning": "before all others",
+      "phonetic": "/fɜːst/",
+      "example": "It was the first day of school.",
+      "type": "adjective",
+      "quiz_q": "What does \"first\" mean?",
       "quiz_options": [
-        "an expert",
-        "the direction of the sunset",
-        "a company",
-        "a device for cooking"
+        "before all others",
+        "not thick",
+        "small or not important",
+        "happening once a year"
       ]
     }
   },
@@ -235,6 +235,6 @@
       "Python",
       "TypeScript"
     ],
-    "lastPush": "2026-11-27T22:13:01Z"
+    "lastPush": "2026-11-28T16:08:27Z"
   }
 }
